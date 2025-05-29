@@ -5,46 +5,46 @@ using UnityEngine.UI;
 
 public class Bird : MonoBehaviour
 {
-    public GameObject dialoguePanel; // UI Panel to show the message and options
-    public Text birdMessageText; // Text element to display the bird's message
-    public Button option1Button; // Button for the first response option
-    public Button option2Button; // Button for the second response option
-    public Button option3Button; // Button for the third response option
+    public GameObject dialoguePanel; 
+    public Text birdMessageText; 
+    public Button option1Button; 
+    public Button option2Button; 
+    public Button option3Button; 
 
-    public Button option1ButtonNew; // New button for option 1
-    public Button option2ButtonNew; // New button for option 2
-    public Button option3ButtonNew; // New button for option 3
+    public Button option1ButtonNew; 
+    public Button option2ButtonNew; 
+    public Button option3ButtonNew; 
 
     private Animator animator;
     private FPSController fpsController;
 
     void Start()
     {
-        // Get the Animator component and set the bird to idle animation
+        
         animator = GetComponent<Animator>();
         animator.SetBool("Idle", true);
 
         if (dialoguePanel != null)
         {
-            dialoguePanel.SetActive(false); // Hide dialogue panel initially
+            dialoguePanel.SetActive(false); 
         }
 
-        // Disable the new buttons initially
+        
         option1ButtonNew.gameObject.SetActive(false);
         option2ButtonNew.gameObject.SetActive(false);
         option3ButtonNew.gameObject.SetActive(false);
 
-        // Assign methods to button click events
+       
         option1Button.onClick.AddListener(() => HandleOptionSelected(1));
         option2Button.onClick.AddListener(() => HandleOptionSelected(2));
         option3Button.onClick.AddListener(() => HandleOptionSelected(3));
 
-        // Assign methods to new button click events
+       
         option1ButtonNew.onClick.AddListener(HideDialoguePanel);
         option2ButtonNew.onClick.AddListener(HideDialoguePanel);
         option3ButtonNew.onClick.AddListener(HideDialoguePanel);
 
-        // Find the FPSController in the scene
+       
         fpsController = FindObjectOfType<FPSController>();
     }
 
@@ -76,7 +76,7 @@ public class Bird : MonoBehaviour
             dialoguePanel.SetActive(true);
             birdMessageText.text = "Merhaba! Ben Frosty. Nasil yardimci olabilirim?"; // Initial bird message
 
-            // Unlock cursor for UI interaction
+           
             if (fpsController != null)
             {
                 fpsController.UnlockCursor();
@@ -121,7 +121,7 @@ public class Bird : MonoBehaviour
                 option2ButtonNew.gameObject.SetActive(true);
                 break;
             case 3:
-                birdMessageText.text = "Önce lezziz kirmizi baligi evime birakmalisin.";
+                birdMessageText.text = "Ã–nce lezziz kirmizi baligi evime birakmalisin.";
                 option3ButtonNew.gameObject.SetActive(true);
                 break;
             default:
