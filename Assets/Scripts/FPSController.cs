@@ -17,7 +17,7 @@ public class FPSController : MonoBehaviour
     }
 
     public Camera playerCamera; // First-person camera
-    public Camera thirdPersonCamera; // Third-person camera
+    public Camera thirdPersonCamera; 
     public Animator animator;
 
     public float walkSpeed = 6f;
@@ -48,7 +48,7 @@ public class FPSController : MonoBehaviour
     public int trajectoryResolution = 30;
     public float trajectoryTimeStep = 0.1f;
 
-    private bool isAiming = false; // Track if the player is aiming
+    private bool isAiming = false; 
 
     void Start()
     {
