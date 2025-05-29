@@ -5,21 +5,21 @@ using System.Collections;
 
 public class IglooZoneManager : MonoBehaviour
 {
-    public GameObject igloo; // Reference to the igloo GameObject (assign in inspector)
-    public ParticleSystem snowStorm; // Reference to the ParticleSystem for the snowstorm (assign in inspector)
-    public Transform checkpoint; // Reference to the checkpoint Transform (assign in inspector)
-    public UIManager uiManager; // Reference to the UIManager (assign in inspector)
+    public GameObject igloo; 
+    public ParticleSystem snowStorm; 
+    public Transform checkpoint; 
+    public UIManager uiManager; 
 
     private bool playerInIgloo = false;
     private bool stormActive = false;
     private bool stormHappened = false; // Track if the storm has already happened
     private float stormDuration = 10f; // Duration of the storm in seconds
     private Coroutine stormCoroutine;
-    private GameObject player; // Reference to the player GameObject
+    private GameObject player; 
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player"); // Assuming the player has the tag "Player"
+        player = GameObject.FindWithTag("Player"); 
         if (player == null)
         {
             Debug.LogError("Player not found! Make sure the player GameObject has the tag 'Player'.");
