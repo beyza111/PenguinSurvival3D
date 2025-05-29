@@ -14,7 +14,7 @@ public class DoorTrigger : MonoBehaviour
             FPSController fpsController = other.GetComponent<FPSController>();
             if (fpsController != null && fpsController.hasKey)
             {
-                // Open the door if the player has the key
+                
                 doorClosed.SetActive(false);
                 doorOpened.SetActive(true);
             }
