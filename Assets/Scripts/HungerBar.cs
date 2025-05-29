@@ -7,7 +7,7 @@ public class HungerBar : MonoBehaviour
 {
     public Slider hungerSlider;
     private int fishCount = 0;
-    private const int maxFishCount = 10; // Maximum fish count that can fill the hunger bar
+    private const int maxFishCount = 10; 
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class HungerBar : MonoBehaviour
         UpdateHungerBar();
     }
 
-    // Update the hunger bar UI based on the current fish count
+   
     private void UpdateHungerBar()
     {
         float hungerValue = (float)fishCount / maxFishCount;
