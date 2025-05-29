@@ -7,15 +7,15 @@ public class ItemCollector : MonoBehaviour
     private bool hasHammer = false;
     private bool hasRedFish = false;
     private int blueFishCount = 0; // Track the number of blue fish collected
-    public Camera mainCamera; // Reference to the main camera
-    public Camera thirdPersonCamera; // Reference to the third-person camera
-    public GameObject redFishPrefab; // Prefab for the red fish
-    public GameObject blueFishPrefab; // Prefab for the blue fish
-    public Transform birdHouse; // Transform of the bird house
-    private GameObject collectedRedFishPrefab; // Reference to the collected red fish prefab
-    public static bool fishDropped = false; // Flag to track if the fish has been dropped
-    public HungerBar hungerBar; // Reference to the HungerBar script
-    public GameObject signGameObject; // Reference to the sign GameObject
+    public Camera mainCamera; 
+    public Camera thirdPersonCamera; 
+    public GameObject redFishPrefab; 
+    public GameObject blueFishPrefab; 
+    public Transform birdHouse;
+    private GameObject collectedRedFishPrefab; 
+    public static bool fishDropped = false; 
+    public HungerBar hungerBar; 
+    public GameObject signGameObject; 
 
     void OnTriggerEnter(Collider other)
     {
@@ -54,11 +54,11 @@ public class ItemCollector : MonoBehaviour
 
     private void CollectBlueFish(GameObject blueFish)
     {
-        blueFishCount++; // Increment the count of blue fish collected
+        blueFishCount++; 
         Destroy(blueFish);
         Debug.Log("Blue fish collected!");
 
-        // Update hunger bar
+        
         if (hungerBar != null)
         {
             hungerBar.IncreaseFishCount();
@@ -118,7 +118,7 @@ public class ItemCollector : MonoBehaviour
         if (collectedRedFishPrefab != null)
         {
             GameObject droppedFish = Instantiate(collectedRedFishPrefab, birdHouse.position, birdHouse.rotation);
-            droppedFish.SetActive(true); // Ensure the instantiated red fish is active
+            droppedFish.SetActive(true); 
             hasRedFish = false; // Reset the red fish collection status
             fishDropped = true; // Set the flag indicating the fish has been dropped
             Debug.Log("Red fish dropped at the bird house!");
